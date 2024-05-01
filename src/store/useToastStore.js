@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 // Zustand store for managing toasts
 export const useToastStore = create((set) => ({

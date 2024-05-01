@@ -15,9 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <DashboardLayout sidebarMenuItems={sidebarMenuItems}>
-          <ToastProvider>{children}</ToastProvider>
-        </DashboardLayout>
+        <main>
+          <DashboardLayout sidebarMenuItems={sidebarMenuItems}>
+            <ToastProvider>{children}</ToastProvider>
+          </DashboardLayout>
+        </main>
       </body>
     </html>
   );

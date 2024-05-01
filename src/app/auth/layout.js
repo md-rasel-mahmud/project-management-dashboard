@@ -1,8 +1,5 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
 import ToastProvider from "@/components/Toast";
-import DashboardLayout from "@/components/DashboardLayout";
-import { sidebarMenuItems } from "./data/sidebarMenuItems";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,13 +8,11 @@ export const metadata = {
   description: "A project management app with task management.",
 };
 
-export default function RootLayout({ children }) {
+export default function AuthLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <DashboardLayout sidebarMenuItems={sidebarMenuItems}>
-          <ToastProvider>{children}</ToastProvider>
-        </DashboardLayout>
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
   );

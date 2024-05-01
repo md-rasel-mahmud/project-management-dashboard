@@ -1,6 +1,6 @@
 import { users } from "@/app/data/users";
 
-export async function POST(req) {
+export const POST = async (req) => {
   const request = await req.json();
 
   // Find the user with the provided email
@@ -33,4 +33,4 @@ export async function POST(req) {
   return Response.json({
     message: "Login Successful!",
   });
-}
+};

@@ -1,8 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ToastProvider from "@/components/Toast";
+import ToastProvider from "@/app/providers/Toast";
 import DashboardLayout from "@/components/DashboardLayout";
 import { sidebarMenuItems } from "./data/sidebarMenuItems";
+import ReactQueryProvider from "./providers/ReactQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main>
           <DashboardLayout sidebarMenuItems={sidebarMenuItems}>
-            <ToastProvider>{children}</ToastProvider>
+            <ToastProvider>
+              <ReactQueryProvider>{children}</ReactQueryProvider>
+            </ToastProvider>
           </DashboardLayout>
         </main>
       </body>
